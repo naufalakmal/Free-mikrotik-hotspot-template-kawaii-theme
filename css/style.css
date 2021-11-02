@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+* {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+}
+.w-700 {
+    font-weight: 700;
+}
+.container {
+    width: 100%;
+    position: relative;
+    height: 100vh;
+}
+.wfh-7, .wfh-8 {
+    width: 645px;
+}
+.card-login, .card-logins {
+    background-color: #FEFEFE;
+    width: 420px;
+    height: 529px;
+    border-radius: 50px !important;
+    box-shadow: 0 0 50px #FFB7D5;
+}
+.card-loging {
+    background-color: #FEFEFE;
+    width: 420px;
+    height: 560px;
+    border-radius: 50px !important;
+    box-shadow: 0 0 50px #FFB7D5;
+}
+.voucher-input {
+    width: 340px;
+    height: 55px;
+    border-radius: 15px;
+    border: 2px solid #FF529B;
+    font-weight: 700;
+    padding-top: 3px;
+    padding-left: 3rem;
+}
+.voucher-input:focus {
+    outline: none;
+}
+.btn-login,.btn-loging {
+    width: 340px;
+    height: 50px;
+    border: none;
+    color: white;
+    border-radius: 15px;
+    background-color: #FF529B;
+    transition: all .3s;
+}
+.btn-login a, .btn-loging a {
+    color: white;
+}
+.btn-login a:hover, .btn-loging a:hover {
+    color: white;
+    text-decoration: none;
+}
+.btn-login:hover ,.btn-loging:hover {
+    background-color: #FF006A;
+}
+.link{
+    color: #FF529B;
+    text-decoration: none;
+    transition: all .2s;
+}
+.link:hover {
+    color: #FF006A;
+    text-decoration: none;
+}
+.bottom {
+    bottom: 10px;
+    width: 100%;
+    position: absolute;
+    margin: auto;
+}
+.text-small{
+    font-size: 14px;
+}
+.rows {
+    display: flex;
+}
+#notValid {
+    margin-top: 2px;
+    margin-bottom: -10px;
+    color: #FF006A;
+}
+@media screen and (max-width: 991px) {
+    .wfh-7, .wfh-8 {
+        width: 520px;
+        margin-left: -100px;
+    }
+    .card-login, .card-logins {
+        width: 400px;
+        height: 500px;
+        margin-left: -50px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .wfh-7, .wfh-8 {
+        width: 400px;
+        margin-left: -100px;
+    }
+    .card-login {
+        width: 300px;
+        height: 400px;
+        margin-left: -50px;
+    }
+    .card-logins {
+        width: 300px;
+        height: 450px;
+        margin-left: -50px;
+    }
+    .log {
+        font-size: 12px;
+    }
+    .btn-login,.voucher-input {
+        width: 250px;
+    }
+    .txt {
+        font-size: 13px;
+        margin-left: 30px;
+    }
+    .ticket{
+        width: 80px;
+    }
+    .title {
+        font-size: 22px;
+    }
+    .sub-title {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 640px){
+    .container {
+        justify-content: center;
+    }
+    .row {
+        top: 0;
+        padding-left: 100px;
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+    }
+    .wfh-7, .wfh-8 {
+        width: 400px;
+    }
+    .card-login, .card-logins {
+        margin-top: -100px;
+    }
+    .bottom {
+        font-size: 10px;
+    }
+}
