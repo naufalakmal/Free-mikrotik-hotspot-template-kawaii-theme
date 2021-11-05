@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <title>Kawaii Mikorotik - Log out</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script>
+      function openLogin() {
+        if (window.name != "hotspot_logout") return true;
+        open("$(link-login)", "_blank", "");
+        window.close();
+        return false;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container d-flex align-items-center justify-content-center">
+      <div class="card-loging d-flex align-items-center justify-content-center">
+        <div class="logo text-center">
+          <img src="assets/svg/logo.png" alt="logo" class="tickets" />
+          <h2 class="my-2 w-700 title">Kamu udah keluar</h2>
+          <div class="text-left toc">
+            <div class="rows mt-4">
+              <div class="col">Username</div>
+              <div class="col">$(username)</div>
+            </div>
+            <div class="rows mt-4">
+              <div class="col">IP Address</div>
+              <div class="col">$(ip)</div>
+            </div>
+            <div class="rows mt-4">
+              <div class="col">MAC Address</div>
+              <div class="col">$(mac)</div>
+            </div>
+            $(if session-time-left)
+            <div class="rows mt-4">
+              <div class="col">Session time</div>
+              <div class="col">$(uptime)</div>
+            </div>
+            $(endif)
+            <div class="rows mt-4">
+              <div class="col">Bytes Up/ Down</div>
+              <div class="col">$(bytes-in-nice) / $(bytes-out-nice)</div>
+            </div>
+          </div>
+          <form
+            action="$(link-login)"
+            name="login"
+            onSubmit="return openLogin()"
+          >
+            <input type="submit" value="Log in" class="mt-5 btn-loging" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+  </body>
+</html>
