@@ -11,8 +11,21 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+	
+	<script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-24451557-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
   </head>
-  <body>
+  <body class="login">
+  
     $(if chap-id)
     <form name="sendin" action="$(link-login-only)" method="post">
       <input type="hidden" name="username" />
@@ -21,14 +34,12 @@
       <input type="hidden" name="popup" value="true" />
     </form>
 
-    <script src="/md5.js"></script>
+    <script type="text/javascript" src="/md5.js"></script>
     <script type="text/javascript">
       <!--
       function doLogin() {
         document.sendin.username.value = document.login.username.value;
-        document.sendin.password.value = hexMD5(
-          "$(chap-id)" + document.login.password.value + "$(chap-challenge)"
-        );
+        document.sendin.password.value = hexMD5("$(chap-id)" + document.login.password.value + "$(chap-challenge)");
         document.sendin.submit();
         return false;
       }
@@ -36,7 +47,10 @@
     </script>
     $(endif)
 
-    <div class="container d-flex align-items-center">
+	<div align="center">
+		<a href="$(link-login-only)?target=lv&amp;dst=$(link-orig-esc)"></a>
+	</div>
+    <form class="container d-flex align-items-center" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
       <div class="row">
         <div class="col-7">
           <img src="assets/svg/wfh_8.svg" alt="wfh-8" class="wfh-8" />
@@ -56,16 +70,6 @@
                   >click here</a
                 >.$(endif)
               </p>
-              <form
-                autocomplete="off"
-                name="login"
-                action="$(link-login-only)"
-                method="post"
-                (if
-                chap-id)
-                onSubmit="return doLogin()"
-                $(endif)
-              >
                 <input
                   type="hidden"
                   name="dst"
@@ -87,6 +91,7 @@
                   <input
                     type="text"
                     name="username"
+					autocomplete="on"
                     value="$(username)"
                     class="voucher-input"
                     placeholder="Username"
@@ -101,12 +106,12 @@
                   <input
                     type="password"
                     name="password"
+					autocomplete="off"
                     class="voucher-input mt-2"
                     placeholder="Password"
                   />
                 </div>
-                <input type="submit" value="Connect" class="mt-3 btn-login" />
-              </form>
+                <input type="submit" name="submit" value="Login" class="mt-3 btn-login" />
               <h6 class="text-left mt-3 text-center log">
                 Sholat, makan PR-nya dikerjain jangan lupa
               </h6>
@@ -114,7 +119,13 @@
           </div>
         </div>
       </div>
-    </div>
+    </form>
+	
+	<script type="text/javascript">
+	<!--
+	  document.login.username.focus();
+	//-->
+	</script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/bootstrap.js"></script>
   </body>
