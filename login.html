@@ -31,27 +31,34 @@
     </script>
     $(endif)
 
-    <div class="container d-flex align-items-center">
-      <div class="row">
-        <div class="col-7">
-          <img src="assets/svg/wfh_8.svg" alt="wfh-8" class="wfh-8" />
-        </div>
-        <div class="col-5">
-          <div
-            class="card-logins d-flex justify-content-center align-items-center"
-          >
-            <div class="logo text-center">
-              <img src="assets/svg/logo.png" alt="logo" class="ticket" />
-              <h2 class="my-2 w-700 title">Member Login</h2>
-              <form
-                autocomplete="off"
-                name="login"
-                action="$(link-login-only)"
-                method="post"
-                (if chap-id)"
-                onSubmit="return doLogin()"
-                $(endif)
-              >
+    <form
+      autocomplete="off"
+      name="login"
+      action="$(link-login-only)"
+      method="post"
+      (if
+      chap-id)
+      onSubmit="return doLogin()"
+      $(endif)
+    >
+      <div class="container d-flex align-items-center">
+        <div class="row">
+          <div class="col-7">
+            <img src="assets/svg/wfh_8.svg" alt="wfh-8" class="wfh-8" />
+          </div>
+          <div class="col-5">
+            <div
+              class="
+                card-logins
+                d-flex
+                justify-content-center
+                align-items-center
+              "
+            >
+              <div class="logo text-center">
+                <img src="assets/svg/logo.png" alt="logo" class="ticket" />
+                <h2 class="my-2 w-700 title">Member Login</h2>
+
                 <div class="input mt-2">
                   <input
                     type="hidden"
@@ -74,10 +81,7 @@
                   <a
                     href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"
                     >click here</a
-                  >.$(endif)
-                  $(endif)
-                  
-                  $(if error)$(error)$(endif)
+                  >.$(endif) $(endif) $(if error)$(error)$(endif)
                 </p>
                 <div class="input">
                   <img
@@ -109,15 +113,16 @@
                   />
                 </div>
                 <input type="submit" value="Connect" class="mt-3 btn-login" />
-              </form>
-              <h6 class="text-left mt-3 text-center log">
-                Sholat, makan PR-nya dikerjain jangan lupa
-              </h6>
+
+                <h6 class="text-left mt-3 text-center log">
+                  Sholat, makan PR-nya dikerjain jangan lupa
+                </h6>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </form>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/bootstrap.js"></script>
   </body>
