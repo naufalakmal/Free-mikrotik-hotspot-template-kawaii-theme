@@ -47,10 +47,7 @@
     </script>
     $(endif)
 
-	<div align="center">
-		<a href="$(link-login-only)?target=lv&amp;dst=$(link-orig-esc)"></a>
-	</div>
-    <form class="container d-flex align-items-center" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+	<div class="container d-flex align-items-center">
       <div class="row">
         <div class="col-7">
           <img src="assets/svg/wfh_8.svg" alt="wfh-8" class="wfh-8" />
@@ -65,61 +62,41 @@
               <p class="info $(if error)alert$(endif)">
                 Please log in to use the internet hotspot service $(if trial ==
                 'yes')<br />Free trial available,
-                <a
-                  href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"
+                <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"
                   >click here</a
                 >.$(endif)
               </p>
-                <input
-                  type="hidden"
-                  name="dst"
-                  value="$(link-orig)"
-                  class="voucher-input"
-                />
-                <input
-                  type="hidden"
-                  name="popup"
-                  value="true"
-                  class="voucher-input"
-                />
-                <div class="input">
-                  <img
-                    src="assets/svg/Haruki Icons.svg"
-                    alt="ticket"
-                    class="position-absolute mt-3 ml-3"
-                  />
-                  <input
-                    type="text"
-                    name="username"
-					autocomplete="on"
-                    value="$(username)"
-                    class="voucher-input"
-                    placeholder="Username"
-                  />
-                </div>
-                <div class="input mt-2">
-                  <img
-                    src="assets/svg/Haruki Icons (1).svg"
-                    alt="ticket"
-                    class="position-absolute mt-4 ml-3"
-                  />
-                  <input
-                    type="password"
-                    name="password"
-					autocomplete="off"
-                    class="voucher-input mt-2"
-                    placeholder="Password"
-                  />
-                </div>
-                <input type="submit" name="submit" value="Login" class="mt-3 btn-login" />
-              <h6 class="text-left mt-3 text-center log">
+				<form autocomplete="off" name="login" action="$(link-login-only)"method="post" (if chap-id) onSubmit="return doLogin()" $(endif)>
+					<input type="hidden" name="dst" value="$(link-orig)" class="voucher-input"/>
+					<input type="hidden" name="popup" value="true" class="voucher-input"/>
+					<div class="input">
+					  <img
+						src="assets/svg/Haruki Icons.svg"
+						alt="ticket"
+						class="position-absolute mt-3 ml-3"
+					  />
+					  <input type="text" name="username" autocomplete="on" value="$(username)" class="voucher-input" placeholder="Username"
+					  />
+					</div>
+					<div class="input mt-2">
+					  <img
+						src="assets/svg/Haruki Icons (1).svg"
+						alt="ticket"
+						class="position-absolute mt-4 ml-3"
+					  />
+					  <input type="password" name="password" autocomplete="off" class="voucher-input mt-2" placeholder="Password"
+					  />
+					</div>
+					<input type="submit" name="submit" value="Login" class="mt-3 btn-login" />
+				</form>
+			  <h6 class="text-left mt-3 text-center log">
                 Sholat, makan PR-nya dikerjain jangan lupa
               </h6>
             </div>
           </div>
         </div>
       </div>
-    </form>
+    </div>
 	
 	<script type="text/javascript">
 	<!--
