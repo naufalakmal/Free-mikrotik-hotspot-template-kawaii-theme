@@ -2,11 +2,12 @@
 <html lang="en">
   <head>
     $(if refresh-timeout)
-    <meta http-equiv="refresh" content="$(refresh-timeout-secs)" />
+    <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
     $(endif)
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />   
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
     <title>Kawaii Mikorotik - Status</title>
 
     <link rel="stylesheet" href="css/style.css" />
@@ -43,7 +44,7 @@
           <h2 class="my-2 w-700 title">Hallo warga01</h2>
           $(endif) 
 
-          <form action="$(link-logout)" name="logout" onsubmit="return openLogout()">
+          <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
             <div class="text-left toc">
               <div class="rows mt-4">
                 <div class="col">IP Address</div>

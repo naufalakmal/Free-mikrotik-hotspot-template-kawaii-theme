@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kawaii Mikorotik</title>
+    <title>Kawaii Mikorotik - Log in</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
   </head>
   <body>
     $(if chap-id)
-    <form
-      name="sendin"
-      action="$(link-login-only)"
-      method="post"
-      style="display: none"
-    >
+    <form name="sendin" action="$(link-login-only)" method="post">
       <input type="hidden" name="username" />
       <input type="hidden" name="password" />
       <input type="hidden" name="dst" value="$(link-orig)" />
@@ -52,9 +48,8 @@
                 name="login"
                 action="$(link-login-only)"
                 method="post"
-                (if
-                chap="id)"
-                onsubmit="return doLogin()"
+                (if chap-id)"
+                onSubmit="return doLogin()"
                 $(endif)
               >
                 <div class="input mt-2">
@@ -79,7 +74,10 @@
                   <a
                     href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"
                     >click here</a
-                  >.$(endif) $(endif) $(if error)$(error)$(endif)
+                  >.$(endif)
+                  $(endif)
+                  
+                  $(if error)$(error)$(endif)
                 </p>
                 <div class="input">
                   <img
