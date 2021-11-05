@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kawaii Mikorotik</title>
+    <title>Kawaii Mikorotik - Log out</title>
 
     <link rel="stylesheet" href="css/style.css" />
     <link
@@ -13,6 +13,14 @@
       integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
       crossorigin="anonymous"
     />
+    <script>
+      function openLogin() {
+        if (window.name != "hotspot_logout") return true;
+        open("$(link-login)", "_blank", "");
+        window.close();
+        return false;
+      }
+    </script>
   </head>
   <body>
     <div class="container d-flex align-items-center justify-content-center">
@@ -22,25 +30,35 @@
           <h2 class="my-2 w-700 title">Kamu udah keluar</h2>
           <div class="text-left toc">
             <div class="rows mt-4">
+              <div class="col">Username</div>
+              <div class="col">$(username)</div>
+            </div>
+            <div class="rows mt-4">
               <div class="col">IP Address</div>
-              <div class="col">192.168.1.102</div>
+              <div class="col">$(ip)</div>
             </div>
             <div class="rows mt-4">
               <div class="col">MAC Address</div>
-              <div class="col">AA:BB:CC:DD:EE:FF</div>
+              <div class="col">$(mac)</div>
             </div>
+            $(if session-time-left)
             <div class="rows mt-4">
               <div class="col">Session time</div>
-              <div class="col">10:00:00</div>
+              <div class="col">$(uptime)</div>
             </div>
+            $(endif)
             <div class="rows mt-4">
               <div class="col">Bytes Up/ Down</div>
-              <div class="col">512k/1M</div>
+              <div class="col">$(bytes-in-nice) / $(bytes-out-nice)</div>
             </div>
           </div>
-          <a href="index.html">
-            <button class="mt-5 btn-loging">Log Out</button>
-          </a>
+          <form
+            action="$(link-login)"
+            name="login"
+            onsubmit="return openLogin()"
+          >
+            <input type="submit" value="Log in" class="mt-5 btn-loging" />
+          </form>
         </div>
       </div>
     </div>

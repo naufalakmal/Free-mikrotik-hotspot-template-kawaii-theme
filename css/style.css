@@ -77,8 +77,24 @@
 .text-small{
     font-size: 14px;
 }
+.asmall{
+    font-size: 14px;
+    padding-left: 9rem;
+}
+.bsmall{
+    font-size: 14px;
+    padding-left: 3rem;
+}
+.csmall{
+    font-size: 14px;
+    padding-left: 7rem;
+}
 .rows {
     display: flex;
+}
+.info{
+    font-size: 12px;
+    padding: 0 20px 0 20px;
 }
 #notValid {
     margin-top: 2px;
